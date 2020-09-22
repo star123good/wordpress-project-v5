@@ -1,0 +1,72 @@
+/*=======================================
+=        Neuron Hover Meta Fixed        =
+========================================*/
+
+.fixed-caption-effect {
+  pointer-events: none;
+  @include fixed-element;
+  z-index: 999;
+
+  .o-neuron-hover-holder__body-meta {
+    @include absolute-element;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__inner {
+      text-align: center;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(35px);
+      transition: all $easeOutSine 200ms;
+    }
+
+    &__title {
+      @include sectioning($margin-bottom: rem(4px));
+      @include heading-2;
+      color: $extra-dark;
+      z-index: 8;
+      opacity: 1;
+    }
+
+    &__subtitle {
+      z-index: 9;
+      color: $dark;
+      font-style: italic;
+      opacity: 1;
+    }
+  }
+  .o-neuron-hover-holder__body-meta {
+    &.active {
+      .o-neuron-hover-holder__body-meta__inner {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+.l-posts-wrapper--meta-fixed {
+  .selector {
+    .o-neuron-hover-holder {
+      transition: opacity $easeOutSine 400ms;
+      transition-delay: 0.05s;
+    }
+  }
+
+  &.active .selector .o-neuron-hover-holder:not(:hover) {
+    opacity: 0.25;
+  }
+
+  .o-neuron-hover {
+    .o-neuron-hover-holder {
+      &__body {
+        top: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+/*=====================
+=        Atoms        =
+=====================*/
+
+.neuron-logo {
+  a {
+    display: block;
+    box-shadow: none !important;
+
+    img {
+      display: block;
+    }
+  }
+}
+
+.neuron-site-title {
+  margin-bottom: 0;
+  line-height: 1;
+
+  a {
+    display: inline-block;
+  }
+}

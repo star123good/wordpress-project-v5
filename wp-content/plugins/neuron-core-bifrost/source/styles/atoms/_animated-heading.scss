@@ -1,0 +1,45 @@
+/*==========================
+=        Animated Heading  =
+==========================*/
+
+// preserve3DNeuron
+@-webkit-keyframes animatedHeading {
+  0% {
+    transform: perspective(450px) translateY(100%) rotateX(0deg) translateZ(0);
+    opacity: 0;
+  }
+  100% {
+    transform: perspective(0px) translateY(0px) rotateX(0deg) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@keyframes animatedHeading {
+  0% {
+    transform: perspective(450px) translateY(100%) rotateX(0deg) translateZ(0);
+    opacity: 0;
+  }
+  100% {
+    transform: perspective(0px) translateY(0px) rotateX(0deg) translateZ(0);
+    opacity: 1;
+  }
+}
+
+.a-animated-heading {
+  &__inner {
+    display: block;
+
+    > span {
+      overflow: hidden;
+      display: block;
+
+      span {
+        display: inline-block;
+        animation-timing-function: ease;
+        animation-fill-mode: both;
+        animation-duration: calc(0.3s);
+        animation-name: animatedHeading;
+      }
+    }
+  }
+}

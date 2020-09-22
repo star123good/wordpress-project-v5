@@ -1,0 +1,27 @@
+/*====================================
+=           Justified Gallery        =
+=====================================*/
+
+.justified {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  > .selector {
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 0 !important;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+  }
+}

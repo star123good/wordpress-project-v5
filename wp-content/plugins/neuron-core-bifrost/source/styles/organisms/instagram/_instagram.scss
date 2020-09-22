@@ -1,0 +1,38 @@
+/*=====================
+=        Instagram    =
+=====================*/
+
+.l-instagram-wrapper {
+  .m-media-gallery__item {
+    &:not(.wow) {
+      visibility: visible;
+    }
+
+    .o-neuron-hover {
+      &-holder {
+        &__body {
+          &-meta {
+            span {
+              color: $extra-dark;
+              font-weight: $bold;
+              font-size: rem(16px);
+
+              &:first-child {
+                margin-right: rem(16px);
+              }
+            }
+          }
+
+          a {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+}

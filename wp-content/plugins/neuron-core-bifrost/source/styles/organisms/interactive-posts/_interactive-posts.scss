@@ -1,0 +1,117 @@
+/*==================================================
+=        Neuron Hover Meta Intearctive Base        =
+==================================================*/
+
+.l-interactive-posts-wrapper {
+  .o-interactive-item {
+    position: relative;
+    z-index: 998;
+    display: inline-block;
+    margin-bottom: rem(30px);
+    visibility: visible;
+
+    &:not(:first-of-type) {
+      // padding-left: rem(16px);
+    }
+
+    &:not(:last-of-type):not(.o-interactive-item--disabled) {
+      // padding-right: rem(60px);
+
+      .o-interactive-item-inner {
+        padding-right: rem(50px);
+
+        &:after {
+          content: '';
+          position: absolute;
+          height: 2px;
+          width: rem(50px);
+          right: 0;
+          display: inline-block;
+          background-color: $dark;
+          pointer-events: none;
+        }
+      }
+    }
+
+    &.o-interactive-item--block {
+      .o-interactive-item-inner {
+        padding: rem(44px);
+        transition: background-color $easeInOutQuad $slow-time;
+      }
+    }
+
+    .o-interactive-item-inner {
+      position: relative;
+      height: 100%;
+      width: 100%;
+
+      .o-interactive-item--holder {
+        .o-interactive-item--category {
+          display: block;
+          font-size: rem(14px);
+          font-style: italic;
+          margin-bottom: rem(8px);
+          position: relative;
+        }
+
+        .o-interactive-item--title {
+          margin-bottom: 0;
+        }
+      }
+
+      .o-interactive-item--link {
+        @include absolute-element;
+        cursor: pointer;
+        line-height: 1;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+.o-image--meta-interactive {
+  position: fixed;
+  z-index: 997;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: visibility $easeInOutQuad $slow-time,
+    opacity $easeInOutQuad $slow-time;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.l-interactive-posts-wrapper--top {
+  .o-interactive-item:not(:last-of-type):not(.o-interactive-item--disabled) {
+    .o-interactive-item-inner:after {
+      top: 0;
+    }
+  }
+}
+
+.l-interactive-posts-wrapper--middle {
+  .o-interactive-item:not(:last-of-type):not(.o-interactive-item--disabled) {
+    .o-interactive-item-inner:after {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.l-interactive-posts-wrapper--bottom {
+  .o-interactive-item:not(:last-of-type):not(.o-interactive-item--disabled) {
+    .o-interactive-item-inner:after {
+      bottom: 0;
+    }
+  }
+}
